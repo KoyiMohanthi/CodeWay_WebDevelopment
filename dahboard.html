@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="dashboard.css"> -->
+    <title>Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .dashboard {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+        }
+
+        .section {
+            background-color: #f2f2f2;
+            border: 1px solid #ddd;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="dashboard">
+        <div class="section">
+            <h2>Total Donations</h2>
+            <p>Total Amount: $1,000</p>
+            <p>Total Donors: 50</p>
+        </div>
+        <div class="section">
+            <h2>Recent Donors</h2>
+            <ul id="recentDonors">
+                <li>John Doe</li>
+                <li>Jane Smith</li>
+                <li>Mike Johnson</li>
+            </ul>
+        </div>
+    </div>
+    
+    <script >
+        document.addEventListener("DOMContentLoaded", function () {
+        // Dummy data for recent donors
+        const recentDonors = ["Sara Johnson", "David Brown", "Emily White"];
+
+        // Get the recent donors list
+        const recentDonorsList = document.getElementById("recentDonors");
+
+        // Clear the list
+        recentDonorsList.innerHTML = "";
+
+        // Populate the recent donors list
+        recentDonors.forEach(function (donor) {
+            const li = document.createElement("li");
+            li.textContent = donor;
+            recentDonorsList.appendChild(li);
+        });
+    });
+
+    </script>
+</body>
+</html>
